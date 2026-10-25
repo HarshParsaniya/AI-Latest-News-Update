@@ -1,0 +1,12 @@
+services:
+  digest:
+    build: .
+    env_file:
+      - .env
+    environment:
+      SQLITE_PATH: /data/digest.db
+    volumes:
+      - digest-data:/data
+
+volumes:
+  digest-data:

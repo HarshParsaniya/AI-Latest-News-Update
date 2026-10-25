@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ai-news-digest-config
+data:
+  DIGEST_TZ: Asia/Kolkata
+  TARGET_ITEM_COUNT: "10"
+  CALLMEBOT_MAX_CHARS: "1500"
+  EXTRACT_ARTICLE_TEXT: "false"

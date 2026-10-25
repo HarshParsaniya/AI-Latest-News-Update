@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>AI Daily Digest — {{ date_label }}</title>
+  </head>
+  <body style="font-family: Georgia, serif; line-height: 1.5; color: #111; max-width: 720px; margin: 0 auto; padding: 16px;">
+    <h1 style="font-size: 22px;">AI Daily Digest — {{ date_label }} ({{ count }} updates)</h1>
+    {% if not items %}
+    <p>No new AI updates today.</p>
+    {% endif %}
+    {% for item in items %}
+    <section style="margin-bottom: 28px; padding-bottom: 16px; border-bottom: 1px solid #ddd;">
+      <h2 style="font-size: 18px; margin-bottom: 4px;">{{ loop.index }}. {{ item.title }}</h2>
+      <p style="color: #555; font-size: 13px; margin-top: 0;">
+        {{ item.source }} · {{ item.published }}
+      </p>
+      <p>{{ item.summary }}</p>
+      <p>
+        <a href="{{ item.url }}">{{ item.url }}</a>
+      </p>
+    </section>
+    {% endfor %}
+  </body>
+</html>
